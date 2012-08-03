@@ -27,6 +27,16 @@ public class GameTest {
 		assertRemoveQuestionRemoveFirstQuestionFromList(game.scienceQuestions, "Science");
 	}
 	
+	@Test
+	public void removeQuestionFromCategoryShouldRemoveFromPopCategoryWhenInputIsSports() {
+		assertRemoveQuestionRemoveFirstQuestionFromList(game.sportsQuestions, "Sports");
+	}
+	
+	@Test
+	public void removeQuestionFromCategoryShouldRemoveFromPopCategoryWhenInputIsRock() {
+		assertRemoveQuestionRemoveFirstQuestionFromList(game.rockQuestions, "Rock");
+	}
+	
 	private void assertRemoveQuestionRemoveFirstQuestionFromList(
 			LinkedList questionsList, String category) {
 		String secondQuestion = (String) questionsList.get(1);
