@@ -107,7 +107,7 @@ public class Game {
 		return currentCategoryByPlace(place);
 	}
 
-	//Visible for testing
+	//VisibleForTesting
 	String currentCategoryByPlace(int place) {
 		if (place == 0) return "Pop";
 		if (place == 4) return "Pop";
