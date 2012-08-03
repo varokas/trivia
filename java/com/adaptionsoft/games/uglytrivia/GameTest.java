@@ -30,5 +30,11 @@ public class GameTest {
 		assertThat(game.currentCategoryByPlace(9), is("Science"));
 	}
 
-
+	@Test
+	public void currentCategoryByPlaceShouldReturnSportsForCorrectPlaces() {
+		assertThat(game.currentCategoryByPlace(2), is("Sports"));
+		assertThat(game.currentCategoryByPlace(6), is("Sports"));
+		assertThat(game.currentCategoryByPlace(10), is("Sports"));
+	}
+	
 }
