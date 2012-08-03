@@ -25,7 +25,7 @@ public class GameTest {
 		assertThat(game.getListByCategoryName("Rock"), is(game.rockQuestions));
 	}
 	
-	@Test(expected=IllegalAccessException.class)
+	@Test(expected=IllegalArgumentException.class)
 	public void getListByCategoryThrowExceptionWhenSuppliedInvalidList() {
 		game.getListByCategoryName("Invalid");
 	}

@@ -96,8 +96,14 @@ public class Game {
 		removeQuestionFromCategory(currentCategory);		
 	}
 	
-	public LinkedList getListByCategoryName(String string) {
-		return null;
+	public LinkedList getListByCategoryName(String category) {
+		if(category == "Pop") return popQuestions;
+		if(category == "Science") return scienceQuestions;
+		if(category == "Sports") return sportsQuestions;
+		if(category == "Rock") return rockQuestions;
+		
+		//for the rest
+		throw new IllegalArgumentException("Unrecognized category: " + category); 
 	}
 
 	//VisibleForTesting
