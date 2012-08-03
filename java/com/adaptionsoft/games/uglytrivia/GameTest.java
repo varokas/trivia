@@ -26,6 +26,17 @@ public class GameTest {
 		assertThat(game.popQuestions.get(0).toString(), is(secondQuestion));
 	}
 	
+	@Test
+	public void removeQuestionFromCategoryShouldRemoveFromPopCategoryWhenInputIsScience() {
+		String secondQuestion = (String) game.scienceQuestions.get(1);
+		int beforeSize = game.scienceQuestions.size();
+		
+		game.removeQuestionFromCategory("Science");
+		
+		assertThat(game.scienceQuestions.size(), is(beforeSize - 1));
+		assertThat(game.scienceQuestions.get(0).toString(), is(secondQuestion));
+	}
+	
 
 	//*** currentCategoryByPlace ***
 	@Test
