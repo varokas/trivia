@@ -22,5 +22,13 @@ public class GameTest {
 		assertThat(game.currentCategoryByPlace(4), is("Pop"));
 		assertThat(game.currentCategoryByPlace(8), is("Pop"));
 	}
+	
+	@Test
+	public void currentCategoryByPlaceShouldReturnScienceForCorrectPlaces() {
+		assertThat(game.currentCategoryByPlace(1), is("Science"));
+		assertThat(game.currentCategoryByPlace(5), is("Science"));
+		assertThat(game.currentCategoryByPlace(9), is("Science"));
+	}
+
 
 }
