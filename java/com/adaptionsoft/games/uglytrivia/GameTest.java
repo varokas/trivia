@@ -15,6 +15,21 @@ public class GameTest {
 	public void before() {
 		game = new Game();
 	}
+	
+	//*** getListByCategoryName ***
+	@Test
+	public void getListByCategoryNameReturnCorrectList() {
+		assertThat(game.getListByCategoryName("Pop"), is(game.popQuestions));
+		assertThat(game.getListByCategoryName("Science"), is(game.scienceQuestions));
+		assertThat(game.getListByCategoryName("Sports"), is(game.sportsQuestions));
+		assertThat(game.getListByCategoryName("Rock"), is(game.rockQuestions));
+	}
+	
+	@Test(expected=IllegalAccessException.class)
+	public void getListByCategoryThrowExceptionWhenSuppliedInvalidList() {
+		game.getListByCategoryName("Invalid");
+	}
+
 
 	//*** removeQuestionFromCategory ***
 	@Test

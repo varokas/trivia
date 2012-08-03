@@ -95,6 +95,10 @@ public class Game {
 		
 		removeQuestionFromCategory(currentCategory);		
 	}
+	
+	public LinkedList getListByCategoryName(String string) {
+		return null;
+	}
 
 	//VisibleForTesting
 	void removeQuestionFromCategory(String currentCategory) {
