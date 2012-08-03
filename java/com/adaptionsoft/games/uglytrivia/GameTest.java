@@ -37,4 +37,22 @@ public class GameTest {
 		assertThat(game.currentCategoryByPlace(10), is("Sports"));
 	}
 	
+	@Test
+	public void currentCategoryByPlaceShouldReturnRockForCorrectPlacesBetweenOneAndTen() {
+		assertThat(game.currentCategoryByPlace(3), is("Rock"));
+		assertThat(game.currentCategoryByPlace(7), is("Rock"));
+	}
+	
+	@Test
+	public void currentCategoryByPlaceShouldReturnRockForNumbersMoreThanTen() {
+		assertThat(game.currentCategoryByPlace(11), is("Rock"));
+		assertThat(game.currentCategoryByPlace(101), is("Rock"));
+		assertThat(game.currentCategoryByPlace(999), is("Rock"));
+	}
+	
+	@Test
+	public void currentCategoryByPlaceShouldReturnRockForNumbersLessThanZero() {
+		assertThat(game.currentCategoryByPlace(-1), is("Rock"));
+		assertThat(game.currentCategoryByPlace(-55), is("Rock"));
+	}
 }
