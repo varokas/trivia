@@ -104,6 +104,11 @@ public class Game {
 	private String currentCategory() {
 		int place = places[currentPlayer];
 		
+		return currentCategoryByPlace(place);
+	}
+
+	//Visible for testing
+	String currentCategoryByPlace(int place) {
 		if (place == 0) return "Pop";
 		if (place == 4) return "Pop";
 		if (place == 8) return "Pop";
