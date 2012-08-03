@@ -13,6 +13,18 @@ public class GameTest {
 	public void before() {
 		game = new Game();
 	}
+
+	//*** removeQuestionFromCategory ***
+	@Test
+	public void removeQuestionFromCategoryShouldRemoveFromPopCategoryWhenInputIsPop() {
+		String secondQuestion = (String) game.popQuestions.get(1);
+		int beforeSize = game.popQuestions.size();
+		
+		game.removeQuestionFromCategory("Pop");
+		
+		assertThat(game.popQuestions.size(), is(beforeSize - 1));
+		assertThat(game.popQuestions.get(0).toString(), is(secondQuestion));
+	}
 	
 
 	//*** currentCategoryByPlace ***
