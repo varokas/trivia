@@ -90,6 +90,11 @@ public class Game {
 	private void askQuestion() {
 		String currentCategory = currentCategory();
 		
+		removeQuestionFromCategory(currentCategory);		
+	}
+
+	//VisibleForTesting
+	void removeQuestionFromCategory(String currentCategory) {
 		if (currentCategory == "Pop")
 			System.out.println(popQuestions.removeFirst());
 		if (currentCategory == "Science")
@@ -97,7 +102,7 @@ public class Game {
 		if (currentCategory == "Sports")
 			System.out.println(sportsQuestions.removeFirst());
 		if (currentCategory == "Rock")
-			System.out.println(rockQuestions.removeFirst());		
+			System.out.println(rockQuestions.removeFirst());
 	}
 	
 	
