@@ -108,14 +108,8 @@ public class Game {
 
 	//VisibleForTesting
 	void removeQuestionFromCategory(String currentCategory) {
-		if (currentCategory == "Pop")
-			System.out.println(popQuestions.removeFirst());
-		if (currentCategory == "Science")
-			System.out.println(scienceQuestions.removeFirst());
-		if (currentCategory == "Sports")
-			System.out.println(sportsQuestions.removeFirst());
-		if (currentCategory == "Rock")
-			System.out.println(rockQuestions.removeFirst());
+		LinkedList list = getListByCategoryName(currentCategory);
+		System.out.println(list.removeFirst());
 	}
 	
 	
