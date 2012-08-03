@@ -3,6 +3,8 @@ package com.adaptionsoft.games.uglytrivia;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
+import java.util.LinkedList;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -16,28 +18,26 @@ public class GameTest {
 
 	//*** removeQuestionFromCategory ***
 	@Test
-	public void removeQuestionFromCategoryShouldRemoveFromPopCategoryWhenInputIsPop() {
-		String secondQuestion = (String) game.popQuestions.get(1);
-		int beforeSize = game.popQuestions.size();
-		
-		game.removeQuestionFromCategory("Pop");
-		
-		assertThat(game.popQuestions.size(), is(beforeSize - 1));
-		assertThat(game.popQuestions.get(0).toString(), is(secondQuestion));
+	public void removeQuestionFromCategoryShouldRemoveFromPopCategoryWhenInputIsPop() {	
+		assertRemoveQuestionRemoveFirstQuestionFromList(game.popQuestions, "Pop");
 	}
 	
 	@Test
 	public void removeQuestionFromCategoryShouldRemoveFromPopCategoryWhenInputIsScience() {
-		String secondQuestion = (String) game.scienceQuestions.get(1);
-		int beforeSize = game.scienceQuestions.size();
-		
-		game.removeQuestionFromCategory("Science");
-		
-		assertThat(game.scienceQuestions.size(), is(beforeSize - 1));
-		assertThat(game.scienceQuestions.get(0).toString(), is(secondQuestion));
+		assertRemoveQuestionRemoveFirstQuestionFromList(game.scienceQuestions, "Science");
 	}
 	
-
+	private void assertRemoveQuestionRemoveFirstQuestionFromList(
+			LinkedList questionsList, String category) {
+		String secondQuestion = (String) questionsList.get(1);
+		int beforeSize = questionsList.size();
+		
+		game.removeQuestionFromCategory(category);
+		
+		assertThat(questionsList.size(), is(beforeSize - 1));
+		assertThat(questionsList.get(0).toString(), is(secondQuestion));
+	}
+	
 	//*** currentCategoryByPlace ***
 	@Test
 	public void currentCategoryByPlaceShouldReturnPopForCorrectPlaces() {
